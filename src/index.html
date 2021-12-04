@@ -88,11 +88,15 @@
 
     <script type="text/javascript" defer>
       setTimeout(() => {
-          document.querySelectorAll(".card").forEach(card => {   
-            console.log(card);
-          if (!card.classList.contains(".active"))
-            card.style.display = "none;";
-          });
+        const toggleNone = className => {
+          let elements = document.getElementsByClassName(className)
+          for (let i = 0; i < elements.length; i++){
+            if (!elements[i].classList.contains("active")){
+              elements[i].style.display = "none";
+            }
+          }
+        }
+        toggleNone('card');
       }, 3000);
     </script>
   </body>
